@@ -16,6 +16,8 @@ h2{
 header>img {display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 10%
+    
 
 }
 nav ul {
@@ -24,4 +26,16 @@ nav ul {
 }
 nav li {
     display: inline-block;
+}
+section{
+    display: flex;
+}
+article{
+    flex: 1;
+}
+footer{
+    display: flex;
+}
+footer div {
+    flex: 1;
 }
