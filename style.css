@@ -24,10 +24,12 @@ header > img {
 }
 
 nav {
-    border: 5px solid #333; /* Add a border around the entire navigation */
-    border-radius: 10px; /* Add rounded corners for a rectangle appearance */
-    padding: 5px; /* Add padding inside the border */
-    margin-bottom: 20px; /* Adjust margin to separate from the content */
+    border: 5px solid #333; 
+    border-radius: 10px; 
+    padding: 5px; 
+    margin-bottom: 20px; 
+    background-color: aquamarine;
+    font-size: 20px;
 }
 
 nav ul {
@@ -42,7 +44,7 @@ nav li {
 }
 
 nav a {
-    text-decoration: navajowhite;
+    text-decoration: none;
     color: #333;
     font-weight: bold;
 }
@@ -70,4 +72,22 @@ footer img {
     display: block;
     margin: 0 auto;
     max-width: 20%;
+}
+
+.ad-banner {
+    text-align: center; 
+    margin: 20px 0; 
+    border: 5px solid #333;    
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: royalblue;
+}
+div img{
+    width:  10%;
+    height:auto;
+}
+div h1{
+    font-size: 30px;
+    text-align: left;
 }
