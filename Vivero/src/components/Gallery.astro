@@ -1,0 +1,150 @@
+---
+// Galería de plantas y flores
+const galleryItems = [
+  {
+    emoji: '🌹',
+    title: 'Rosas',
+    category: 'Flores',
+    color: 'from-red-400 to-pink-400'
+  },
+  {
+    emoji: '🌵',
+    title: 'Cactus',
+    category: 'Suculentas',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    emoji: '🌻',
+    title: 'Girasoles',
+    category: 'Flores',
+    color: 'from-yellow-400 to-orange-400'
+  },
+  {
+    emoji: '🌿',
+    title: 'Helechos',
+    category: 'Ornamentales',
+    color: 'from-verde-claro to-verde-hoja'
+  },
+  {
+    emoji: '🌴',
+    title: 'Palmeras',
+    category: 'Árboles',
+    color: 'from-lime-400 to-green-500'
+  },
+  {
+    emoji: '🌷',
+    title: 'Tulipanes',
+    category: 'Flores',
+    color: 'from-purple-400 to-pink-500'
+  },
+  {
+    emoji: '🪴',
+    title: 'Potus',
+    category: 'Interior',
+    color: 'from-verde-claro to-teal-400'
+  },
+  {
+    emoji: '🌺',
+    title: 'Hibiscos',
+    category: 'Flores',
+    color: 'from-rose-400 to-red-500'
+  },
+  {
+    emoji: '🍋',
+    title: 'Limonero',
+    category: 'Frutales',
+    color: 'from-yellow-300 to-lime-400'
+  }
+];
+---
+
+<section id="galeria" class="section-container">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-bold text-verde-hoja mb-4">
+      Nuestra Galería
+    </h2>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Explora nuestra variedad de plantas y flores. Cada una cuidada con amor para llevar vida a tu hogar.
+    </p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="flex flex-wrap justify-center gap-4 mb-12">
+    <button class="filter-btn active px-6 py-2 rounded-full bg-verde-hoja text-white font-medium transition-all duration-300 hover:shadow-lg" data-filter="all">
+      Todas
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-white text-verde-hoja font-medium transition-all duration-300 hover:shadow-lg border-2 border-verde-hoja" data-filter="Flores">
+      Flores
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-white text-verde-hoja font-medium transition-all duration-300 hover:shadow-lg border-2 border-verde-hoja" data-filter="Suculentas">
+      Suculentas
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-white text-verde-hoja font-medium transition-all duration-300 hover:shadow-lg border-2 border-verde-hoja" data-filter="Ornamentales">
+      Ornamentales
+    </button>
+  </div>
+
+  <!-- Grid de galería -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {galleryItems.map((item) => (
+      <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer" data-category={item.category}>
+        <div class={`aspect-square bg-gradient-to-br ${item.color} flex flex-col items-center justify-center transition-transform duration-500 group-hover:scale-110`}>
+          <div class="text-8xl mb-4 transform group-hover:rotate-12 transition-transform duration-300">
+            {item.emoji}
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end justify-center pb-8">
+            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+              <h3 class="text-2xl font-bold mb-1">{item.title}</h3>
+              <p class="text-sm">{item.category}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Mensaje cuando no hay resultados -->
+  <div id="no-results" class="hidden text-center py-12">
+    <p class="text-xl text-gray-500">No se encontraron plantas en esta categoría</p>
+  </div>
+</section>
+
+<script>
+  // Filtro de galería
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const noResults = document.getElementById('no-results');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      
+      // Actualizar botones activos
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active', 'bg-verde-hoja', 'text-white');
+        btn.classList.add('bg-white', 'text-verde-hoja', 'border-2', 'border-verde-hoja');
+      });
+      button.classList.add('active', 'bg-verde-hoja', 'text-white');
+      button.classList.remove('bg-white', 'text-verde-hoja', 'border-2', 'border-verde-hoja');
+
+      // Filtrar items
+      let visibleCount = 0;
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Mostrar mensaje si no hay resultados
+      if (visibleCount === 0) {
+        noResults?.classList.remove('hidden');
+      } else {
+        noResults?.classList.add('hidden');
+      }
+    });
+  });
+</script>

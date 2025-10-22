@@ -1,0 +1,79 @@
+---
+// Header con navegación responsive
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-verde-hoja rounded-full flex items-center justify-center">
+          <span class="text-2xl">🌿</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold text-verde-hoja">Vivero VerdeVida</h1>
+          <p class="text-xs text-marron-suave">Tu jardín, nuestra pasión</p>
+        </div>
+      </div>
+
+      <!-- Navegación Desktop -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#inicio" class="text-gray-700 hover:text-verde-hoja transition-colors duration-300 font-medium">
+          Inicio
+        </a>
+        <a href="#servicios" class="text-gray-700 hover:text-verde-hoja transition-colors duration-300 font-medium">
+          Servicios
+        </a>
+        <a href="#galeria" class="text-gray-700 hover:text-verde-hoja transition-colors duration-300 font-medium">
+          Galería
+        </a>
+        <a href="#contacto" class="btn-primary">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Botón menú móvil -->
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-verde-claro/20 transition-colors">
+        <svg class="w-6 h-6 text-verde-hoja" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-3">
+        <a href="#inicio" class="text-gray-700 hover:text-verde-hoja transition-colors duration-300 font-medium py-2">
+          Inicio
+        </a>
+        <a href="#servicios" class="text-gray-700 hover:text-verde-hoja transition-colors duration-300 font-medium py-2">
+          Servicios
+        </a>
+        <a href="#galeria" class="text-gray-700 hover:text-verde-hoja transition-colors duration-300 font-medium py-2">
+          Galería
+        </a>
+        <a href="#contacto" class="btn-primary text-center">
+          Contacto
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Toggle menú móvil
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Cerrar menú al hacer click en un enlace
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

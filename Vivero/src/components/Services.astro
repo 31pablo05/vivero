@@ -1,0 +1,69 @@
+---
+// Sección de servicios del vivero
+const services = [
+  {
+    icon: '🌺',
+    title: 'Venta de Plantas',
+    description: 'Amplio catálogo de plantas ornamentales, frutales, aromáticas y suculentas de la mejor calidad.'
+  },
+  {
+    icon: '💡',
+    title: 'Asesoramiento',
+    description: 'Nuestros expertos te ayudan a elegir las plantas perfectas según tu espacio y necesidades.'
+  },
+  {
+    icon: '🌿',
+    title: 'Mantenimiento',
+    description: 'Servicios de cuidado y mantenimiento de jardines, podas, fertilización y control de plagas.'
+  },
+  {
+    icon: '🎨',
+    title: 'Diseño de Jardines',
+    description: 'Creamos espacios verdes únicos adaptados a tus gustos y al estilo de tu hogar.'
+  },
+  {
+    icon: '🪴',
+    title: 'Macetas y Accesorios',
+    description: 'Todo lo que necesitas: macetas, sustratos, fertilizantes, herramientas y decoración.'
+  },
+  {
+    icon: '🚚',
+    title: 'Delivery',
+    description: 'Servicio de entrega a domicilio para que recibas tus plantas en perfectas condiciones.'
+  }
+];
+---
+
+<section id="servicios" class="section-container bg-white">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-bold text-verde-hoja mb-4">
+      Nuestros Servicios
+    </h2>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Todo lo que necesitas para hacer realidad tu jardín ideal, con la mejor calidad y atención personalizada.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {services.map((service) => (
+      <div class="card group">
+        <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+          {service.icon}
+        </div>
+        <h3 class="text-2xl font-semibold text-verde-hoja mb-3">
+          {service.title}
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          {service.description}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  <!-- CTA adicional -->
+  <div class="mt-16 text-center">
+    <a href="#contacto" class="btn-primary inline-block">
+      Consultar Servicios
+    </a>
+  </div>
+</section>

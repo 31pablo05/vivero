@@ -1,0 +1,78 @@
+---
+// Sección Hero principal
+---
+
+<section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  <!-- Background con gradiente -->
+  <div class="absolute inset-0 bg-gradient-to-br from-verde-claro/30 via-beige-tierra to-verde-claro/20"></div>
+  
+  <!-- Patrón decorativo -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-10 left-10 text-9xl">🌿</div>
+    <div class="absolute bottom-20 right-20 text-9xl">🌺</div>
+    <div class="absolute top-1/2 left-1/4 text-7xl">🪴</div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="section-container relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Texto -->
+      <div class="text-center md:text-left space-y-6">
+        <h2 class="text-5xl md:text-6xl font-bold text-verde-hoja leading-tight">
+          Bienvenido a
+          <span class="text-marron-suave">Vivero VerdeVida</span>
+        </h2>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          Tu espacio verde donde encontrarás las mejores plantas, flores y todo el asesoramiento que necesitas para crear el jardín de tus sueños.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#galeria" class="btn-primary">
+            Ver Catálogo 🌸
+          </a>
+          <a href="#servicios" class="btn-secondary">
+            Nuestros Servicios
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 pt-8">
+          <div class="text-center">
+            <p class="text-3xl font-bold text-verde-hoja">500+</p>
+            <p class="text-sm text-gray-600">Variedades</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-verde-hoja">15+</p>
+            <p class="text-sm text-gray-600">Años</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-verde-hoja">1000+</p>
+            <p class="text-sm text-gray-600">Clientes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen ilustrativa -->
+      <div class="relative">
+        <div class="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Placeholder con gradiente y emoji -->
+          <div class="w-full h-full bg-gradient-to-br from-verde-hoja to-verde-claro flex items-center justify-center">
+            <div class="text-center">
+              <p class="text-9xl mb-4">🌱</p>
+              <p class="text-white text-xl font-semibold">Plantas de Calidad</p>
+            </div>
+          </div>
+        </div>
+        <!-- Elemento decorativo flotante -->
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-marron-suave/20 rounded-full blur-2xl"></div>
+        <div class="absolute -top-6 -left-6 w-32 h-32 bg-verde-claro/30 rounded-full blur-2xl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicador de scroll -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-verde-hoja" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>

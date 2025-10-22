@@ -1,0 +1,239 @@
+---
+// Formulario de contacto con validación
+---
+
+<section id="contacto" class="section-container bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Información de contacto -->
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-verde-hoja mb-4">
+            Contáctanos
+          </h2>
+          <p class="text-xl text-gray-600">
+            ¿Tienes dudas sobre nuestras plantas o servicios? Estamos aquí para ayudarte.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Dirección -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-verde-claro rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">📍</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-verde-hoja mb-1">Ubicación</h3>
+              <p class="text-gray-600">Av. Principal 1234, Ciudad Verde</p>
+              <p class="text-gray-600">Buenos Aires, Argentina</p>
+            </div>
+          </div>
+
+          <!-- Horarios -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-verde-claro rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🕐</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-verde-hoja mb-1">Horarios</h3>
+              <p class="text-gray-600">Lunes a Viernes: 9:00 - 18:00</p>
+              <p class="text-gray-600">Sábados: 9:00 - 14:00</p>
+              <p class="text-gray-600">Domingos: Cerrado</p>
+            </div>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-verde-claro rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">📞</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-verde-hoja mb-1">Teléfono</h3>
+              <p class="text-gray-600">+54 11 1234-5678</p>
+              <p class="text-gray-600">contacto@viveroverdvida.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="pt-6">
+          <h3 class="font-semibold text-lg text-verde-hoja mb-4">Síguenos</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="w-12 h-12 bg-verde-hoja text-white rounded-full flex items-center justify-center hover:bg-verde-hoja/90 transition-all duration-300 hover:scale-110">
+              <span class="text-xl">📘</span>
+            </a>
+            <a href="#" class="w-12 h-12 bg-verde-hoja text-white rounded-full flex items-center justify-center hover:bg-verde-hoja/90 transition-all duration-300 hover:scale-110">
+              <span class="text-xl">📷</span>
+            </a>
+            <a href="#" class="w-12 h-12 bg-verde-hoja text-white rounded-full flex items-center justify-center hover:bg-verde-hoja/90 transition-all duration-300 hover:scale-110">
+              <span class="text-xl">💬</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="bg-gradient-to-br from-verde-claro/10 to-beige-tierra p-8 rounded-2xl shadow-xl">
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-verde-hoja mb-2">
+              Nombre completo *
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-lg border-2 border-verde-claro/30 focus:border-verde-hoja focus:outline-none transition-colors bg-white"
+              placeholder="Juan Pérez"
+            />
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-semibold text-verde-hoja mb-2">
+              Email *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-lg border-2 border-verde-claro/30 focus:border-verde-hoja focus:outline-none transition-colors bg-white"
+              placeholder="juan@ejemplo.com"
+            />
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-verde-hoja mb-2">
+              Teléfono
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="w-full px-4 py-3 rounded-lg border-2 border-verde-claro/30 focus:border-verde-hoja focus:outline-none transition-colors bg-white"
+              placeholder="+54 11 1234-5678"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-semibold text-verde-hoja mb-2">
+              Asunto *
+            </label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 rounded-lg border-2 border-verde-claro/30 focus:border-verde-hoja focus:outline-none transition-colors bg-white"
+            >
+              <option value="">Selecciona un asunto</option>
+              <option value="consulta">Consulta general</option>
+              <option value="compra">Compra de plantas</option>
+              <option value="servicio">Servicio de mantenimiento</option>
+              <option value="diseno">Diseño de jardín</option>
+              <option value="otro">Otro</option>
+            </select>
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-semibold text-verde-hoja mb-2">
+              Mensaje *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="4"
+              class="w-full px-4 py-3 rounded-lg border-2 border-verde-claro/30 focus:border-verde-hoja focus:outline-none transition-colors resize-none bg-white"
+              placeholder="Cuéntanos cómo podemos ayudarte..."
+            ></textarea>
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+
+          <button type="submit" class="btn-primary w-full">
+            Enviar Mensaje 📨
+          </button>
+
+          <div id="form-success" class="hidden bg-verde-claro text-verde-hoja px-4 py-3 rounded-lg text-center font-medium">
+            ¡Mensaje enviado con éxito! Te responderemos pronto. 🌿
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('form-success');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Limpiar mensajes de error previos
+    const errorMessages = form.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => {
+      msg.classList.add('hidden');
+      msg.textContent = '';
+    });
+
+    // Validación básica
+    let isValid = true;
+    const formData = new FormData(form);
+
+    // Validar nombre
+    const name = formData.get('name') as string;
+    if (!name || name.trim().length < 3) {
+      showError('name', 'El nombre debe tener al menos 3 caracteres');
+      isValid = false;
+    }
+
+    // Validar email
+    const email = formData.get('email') as string;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      showError('email', 'Por favor ingresa un email válido');
+      isValid = false;
+    }
+
+    // Validar asunto
+    const subject = formData.get('subject') as string;
+    if (!subject) {
+      showError('subject', 'Por favor selecciona un asunto');
+      isValid = false;
+    }
+
+    // Validar mensaje
+    const message = formData.get('message') as string;
+    if (!message || message.trim().length < 10) {
+      showError('message', 'El mensaje debe tener al menos 10 caracteres');
+      isValid = false;
+    }
+
+    if (isValid) {
+      // Simular envío (aquí irías a tu backend)
+      console.log('Formulario válido:', Object.fromEntries(formData));
+      
+      // Mostrar mensaje de éxito
+      successMessage?.classList.remove('hidden');
+      form.reset();
+
+      // Ocultar mensaje después de 5 segundos
+      setTimeout(() => {
+        successMessage?.classList.add('hidden');
+      }, 5000);
+    }
+  });
+
+  function showError(fieldName: string, message: string) {
+    const field = form?.querySelector(`[name="${fieldName}"]`);
+    const errorElement = field?.parentElement?.querySelector('.error-message');
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.remove('hidden');
+    }
+  }
+</script>
